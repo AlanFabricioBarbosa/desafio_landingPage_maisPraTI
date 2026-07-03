@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="HQ Universe — Heróis de todas as editoras em um só lugar. Dark Horse, Marvel, DC, Image Comics e muito mais." />
+  <meta name="author" content="HQ Universe" />
+  <title>HQ Universe — Histórias em Quadrinhos</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;600;700;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- HEADER-->
+  <header class="site-header" role="banner">
+    <div class="header-inner container">
+      <a href="#hero" class="logo" aria-label="HQ Universe — Ir para o início">
+        <span class="logo-text">HQ <strong>Universe</strong></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul class="nav-list" role="list">
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#colecao" class="nav-link">Coleção</a></li>
+          <li><a href="#personagens" class="nav-link">Personagens</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button id="btn-assinar" class="btn btn-primary btn-header" type="button"
+        aria-label="Assinar agora e começar a ler HQs">
+        Assinar Agora
+      </button>
+
+      <button class="nav-toggle" id="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu"
+        type="button">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!--MAIN-->
+  <main id="main-content">
+
+    <!--Hero-->
+    <section id="hero" class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="hero-banner.png" alt="Herói em ação com relâmpagos dourados e paisagem urbana em quadrinhos"
+          class="hero-img" fetchpriority="high" width="1024" height="1024" />
+        <div class="hero-overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-content container">
+        <p class="hero-eyebrow" aria-hidden="true">✦ Nova Coleção 2026 ✦</p>
+        <h1 id="hero-title" class="hero-title">
+          Onde Toda<br />
+          <span class="hero-title-highlight">Aventura</span><br />
+          Começa
+        </h1>
+        <p class="hero-desc">
+          Personagens de todas as editoras: Dark Horse, Marvel, DC, Image Comics
+          e muito mais. Heróis, vilões, mistério e ação — tudo em um só lugar.
+        </p>
+        <div class="hero-actions">
+          <a href="#colecao" class="btn btn-primary btn-lg" id="btn-saiba-mais">
+            Saiba Mais
+          </a>
+          <a href="#contato" class="btn btn-outline btn-lg">
+            Entre em Contato
+          </a>
+        </div>
+      </div>
+
+      <!--Destaque-->
+      <div class="hero-stats" aria-label="Números da plataforma">
+        <div class="stat-item">
+          <span class="stat-number">+500</span>
+          <span class="stat-label">Títulos</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">+10k</span>
+          <span class="stat-label">Leitores</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Digital</span>
+        </div>
+      </div>
+    </section>
+
+    <!--Sobre-->
+    <section id="sobre" class="about-section" aria-labelledby="sobre-title">
+      <div class="container about-grid">
+        <div class="about-text">
+          <span class="section-tag">Sobre Nós</span>
+          <h2 id="sobre-title" class="section-title">
+            A Paixão pelos Quadrinhos em Cada Detalhe
+          </h2>
+          <p class="about-desc">
+            A <strong>HQ Universe</strong> nasceu do amor pelas histórias em
+            quadrinhos. Reunimos personagens de editoras como <strong>Dark Horse</strong>,
+            <strong>Marvel</strong>, <strong>DC</strong>, <strong>Image Comics</strong>
+            e muitas outras em uma experiência de leitura imersiva.
+          </p>
+          <p class="about-desc">
+            Do Hellboy ao Homem-Aranha, do Batman ao Spawn — são mais de
+            <strong>730 personagens</strong> de todas as editoras. Nossa missão
+            é simples: reunir o melhor dos quadrinhos em um só lugar.
+          </p>
+          <a href="#colecao" class="btn btn-primary" id="btn-colecao">
+            Ver Coleção
+          </a>
+        </div>
+
+        <div class="about-cards" aria-label="Destaques da plataforma">
+          <article class="feature-card">
+            <h3 class="feature-title">Arte de Qualidade</h3>
+            <p>Quadrinhos com arte cuidadosamente selecionada pelos melhores artistas.</p>
+          </article>
+          <article class="feature-card">
+            <h3 class="feature-title">Multi-Editoras</h3>
+            <p>Personagens de Dark Horse, Marvel, DC, Image e outras editoras.</p>
+          </article>
+          <article class="feature-card">
+            <h3 class="feature-title">Todas as Editoras</h3>
+            <p>De Hellboy a Batman, do Spawn ao Homem-Aranha — tudo reunido aqui.</p>
+          </article>
+          <article class="feature-card">
+            <h3 class="feature-title">Leia em Qualquer Lugar</h3>
+            <p>Plataforma responsiva — leia no celular, tablet ou computador.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!--Colecao-->
+    <section id="colecao" class="collection-section" aria-labelledby="colecao-title">
+      <div class="container">
+        <span class="section-tag">Em Destaque</span>
+        <h2 id="colecao-title" class="section-title">Personagens de Todas as Editoras</h2>
+        <p class="section-subtitle">
+          Explore heróis e vilões da Dark Horse, Marvel, DC, Image Comics e mais
+        </p>
+
+        <!--busca -->
+        <div class="collection-controls">
+          <label for="busca-personagem" class="visually-hidden">Buscar personagem</label>
+          <input type="search" id="busca-personagem" class="search-input" placeholder="Buscar personagem..."
+            autocomplete="off" aria-label="Buscar personagem" />
+        </div>
+
+        <div id="api-status" class="api-status" aria-live="polite" aria-atomic="true"></div>
+
+        <!-- Grid de personagens -->
+        <div id="characters-grid" class="characters-grid" role="list" aria-label="Lista de personagens"></div>
+
+        <!-- Paginacao -->
+        <div class="pagination" id="pagination" aria-label="Paginação da coleção"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!--ultimas noticias / destaques)-->
+  <aside class="sidebar-section" aria-labelledby="sidebar-title">
+    <div class="container sidebar-inner">
+      <h2 id="sidebar-title" class="sidebar-title">
+        <span aria-hidden="true">⚡</span> Últimas Notícias
+      </h2>
+
+      <div class="news-grid">
+        <article class="news-card">
+          <time class="news-date" datetime="2025-06-20">20 Jun 2025</time>
+          <h3 class="news-headline">
+            Novo arco do Homem-Aranha chega à plataforma em julho
+          </h3>
+          <p class="news-excerpt">
+            A saga "Web of Shadows" promete revolucionar o universo do Cabeça de Teia com reviravoltas épicas.
+          </p>
+          <a href="#" class="news-link">Ler mais →</a>
+        </article>
+
+        <article class="news-card">
+          <time class="news-date" datetime="2025-06-15">15 Jun 2025</time>
+          <h3 class="news-headline">
+            HQs nacionais batem recorde de leitores em 2025
+          </h3>
+          <p class="news-excerpt">
+            O mercado brasileiro de quadrinhos cresceu 40% este ano, impulsionado por novas plataformas digitais.
+          </p>
+          <a href="#" class="news-link">Ler mais →</a>
+        </article>
+
+        <article class="news-card">
+          <time class="news-date" datetime="2025-06-10">10 Jun 2025</time>
+          <h3 class="news-headline">
+            Turma da Mônica lança edição comemorativa de 60 anos
+          </h3>
+          <p class="news-excerpt">
+            A edição especial reúne as histórias mais queridas do personagem criado por Maurício de Sousa.
+          </p>
+          <a href="#" class="news-link">Ler mais →</a>
+        </article>
+      </div>
+      <div class="sidebar-cta">
+        <p class="sidebar-cta-text">
+          Não perca nenhuma novidade! Assine nossa newsletter.
+        </p>
+        <button id="btn-newsletter" class="btn btn-secondary" type="button"
+          aria-label="Assinar newsletter de quadrinhos">
+          Assinar Newsletter
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!--CONTATO-->
+  <section id="contato" class="contact-section" aria-labelledby="contato-title">
+    <div class="container contact-grid">
+
+      <div class="contact-info">
+        <span class="section-tag">Fale Conosco</span>
+        <h2 id="contato-title" class="section-title">Entre em Contato</h2>
+        <p class="contact-desc">
+          Tem dúvidas, sugestões ou quer saber mais sobre a nossa coleção?
+          Preencha o formulário e nossa equipe responderá em até 24 horas.
+        </p>
+
+        <ul class="contact-details" role="list">
+          <li class="contact-detail-item">
+            <span>Rua dos Quadrinhos, #1 — Maceió, AL</span>
+          </li>
+          <li class="contact-detail-item">
+            <a href="mailto:contato@hquniverse.com.br" class="contact-link">
+              contato@hquniverse.com.br
+            </a>
+          </li>
+          <li class="contact-detail-item">
+            <span class="contact-icon" aria-hidden="true">📞</span>
+            <a href="tel:+5511999999999" class="contact-link">
+              (11) 9 9999-9999
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Formulario de contato -->
+      <div class="contact-form-wrapper">
+        <form id="contact-form" class="contact-form" novalidate aria-label="Formulário de contato">
+          <div class="form-group">
+            <label for="contact-name" class="form-label">Nome completo</label>
+            <input type="text" id="contact-name" name="name" class="form-input" placeholder="Seu nome"
+              autocomplete="name" required minlength="2" aria-describedby="name-error" />
+            <span id="name-error" class="form-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email" class="form-label">E-mail</label>
+            <input type="email" id="contact-email" name="email" class="form-input" placeholder="seu@email.com"
+              autocomplete="email" required aria-describedby="email-error" />
+            <span id="email-error" class="form-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-subject" class="form-label">Assunto</label>
+            <select id="contact-subject" name="subject" class="form-input form-select" required
+              aria-describedby="subject-error">
+              <option value="" disabled selected>Selecione um assunto</option>
+              <option value="duvida">Dúvida sobre assinatura</option>
+              <option value="sugestao">Sugestão de título</option>
+              <option value="parceria">Parceria comercial</option>
+              <option value="outro">Outro</option>
+            </select>
+            <span id="subject-error" class="form-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message" class="form-label">Mensagem</label>
+            <textarea id="contact-message" name="message" class="form-input form-textarea"
+              placeholder="Escreva sua mensagem aqui..." rows="5" required minlength="10"
+              aria-describedby="message-error"></textarea>
+            <span id="message-error" class="form-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <button type="submit" id="btn-submit-form" class="btn btn-primary btn-full"
+            aria-label="Enviar mensagem de contato">
+            <span class="btn-text">Enviar Mensagem</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="logo footer-logo" aria-label="HQ Universe — Início">
+          <span class="logo-text">HQ <strong>Universe</strong></span>
+        </a>
+        <nav aria-label="Redes sociais">
+          <ul class="social-links" role="list">
+            <li>
+              <a href="#" class="social-link" aria-label="Instagram do HQ Universe">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link" aria-label="Twitter/X do HQ Universe">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link" aria-label="YouTube do HQ Universe">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <nav class="footer-nav" aria-label="Links úteis do rodapé">
+        <h3 class="footer-nav-title">Navegação</h3>
+        <ul class="footer-nav-list" role="list">
+          <li><a href="#sobre" class="footer-link">Sobre</a></li>
+          <li><a href="#colecao" class="footer-link">Coleção</a></li>
+          <li><a href="#personagens" class="footer-link">Personagens</a></li>
+          <li><a href="#contato" class="footer-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-label="Gêneros de quadrinhos">
+        <h3 class="footer-nav-title">Gêneros</h3>
+        <ul class="footer-nav-list" role="list">
+          <li><a href="#" class="footer-link">Super-heróis</a></li>
+          <li><a href="#" class="footer-link">Terror</a></li>
+          <li><a href="#" class="footer-link">Sci-Fi</a></li>
+          <li><a href="#" class="footer-link">Mangá</a></li>
+          <li><a href="#" class="footer-link">Nacional</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-legal">
+        <h3 class="footer-nav-title">Legal</h3>
+        <ul class="footer-nav-list" role="list">
+          <li><a href="#" class="footer-link">Termos de Uso</a></li>
+          <li><a href="#" class="footer-link">Privacidade</a></li>
+          <li><a href="#" class="footer-link">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copy">
+          &copy; <span id="footer-year"></span> HQ Universe.
+        </p>
+        <p class="footer-credits">
+          Desenvolvido para o desafio <strong>+PraTI</strong>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="thank-you-modal" class="thank-you-modal" aria-labelledby="modal-title" aria-describedby="modal-desc">
+    <div class="modal-inner">
+      <h2 id="modal-title" class="modal-title">Mensagem Enviada!</h2>
+      <p id="modal-desc" class="modal-desc">
+        Obrigado por entrar em contato,
+        <strong id="modal-user-name"></strong>!
+        Nossa equipe responderá em até 24 horas no e-mail informado.
+      </p>
+      <div class="modal-actions">
+        <button id="modal-close" class="btn btn-primary" type="button" autofocus>
+          Fechar
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- btn back to top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo da página" title="Voltar ao topo"
+    type="button">
+    ↑
+  </button>
+
+  <script src="../JavaScript/main.js"></script>
+</body>
+
+</html>

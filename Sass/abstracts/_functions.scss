@@ -1,0 +1,42 @@
+@use 'variables' as *;
+
+@function color($name, $alpha: 1) {
+  @if $name =='primary' {
+    @return rgba($color-primary-r, $color-primary-g, $color-primary-b, $alpha);
+  }
+
+  @else if $name =='secondary' {
+    @return rgba($color-secondary-r, $color-secondary-g, $color-secondary-b, $alpha);
+  }
+
+  @else if $name =='accent' {
+    @return rgba($color-accent-r, $color-accent-g, $color-accent-b, $alpha);
+  }
+
+  @warn "Cor `#{$name}` não encontrada no mapa de cores.";
+  @return null;
+}
+
+@function rem($px, $base: 16) {
+  @return #{$px / $base}rem;
+}
+
+@function fluid-type($min-size, $max-size, $min-width: 375px, $max-width: 1200px) {
+  $slope: (
+    $max-size - $min-size) / ($max-width - $min-width
+  );
+$intercept: $min-size - $slope * $min-width;
+@return clamp(#{$min-size}, #{$intercept} + #{$slope * 100}vw, #{$max-size});
+}
+
+@function min-val($a, $b) {
+  @return if($a < $b, $a, $b);
+}
+
+@function max-val($a, $b) {
+  @return if($a > $b, $a, $b);
+}
+
+@function clamp-val($min, $val, $max) {
+  @return max-val($min, min-val($val, $max));
+}

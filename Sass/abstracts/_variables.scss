@@ -1,0 +1,145 @@
+$color-bg-base : #0a0a0f;
+$color-bg-surface : #111118;
+$color-bg-elevated : #1a1a28;
+$color-bg-overlay : rgba(10, 10, 15, 0.85);
+
+$color-primary : #f5c518;
+$color-primary-light : #ffd740;
+$color-primary-dark : #c49b10;
+$color-primary-r : 245;
+$color-primary-g : 197;
+$color-primary-b : 24;
+
+$color-secondary : #7c3aed;
+$color-secondary-light: #9d5cff;
+$color-secondary-dark : #5b21b6;
+$color-secondary-r : 124;
+$color-secondary-g : 58;
+$color-secondary-b : 237;
+
+$color-accent : #ef4444;
+$color-accent-light : #f87171;
+$color-accent-r : 239;
+$color-accent-g : 68;
+$color-accent-b : 68;
+
+$color-text-primary : #f0f0fa;
+$color-text-secondary: #a8a8c0;
+$color-text-muted : #6b6b85;
+$color-text-inverse : #0a0a0f;
+
+$color-border : rgba(240, 240, 250, 0.1);
+$color-border-strong : rgba(240, 240, 250, 0.2);
+
+$color-success : #22c55e;
+$color-error : #ef4444;
+$color-warning : #f59e0b;
+$color-info : #3b82f6;
+
+$gradient-primary : linear-gradient(135deg, $color-primary 0%, $color-accent 100%);
+$gradient-secondary : linear-gradient(135deg, $color-secondary 0%, $color-accent 100%);
+$gradient-hero : linear-gradient(180deg, transparent 0%, rgba(10, 10, 15, 0.6) 50%, $color-bg-base 100%);
+$gradient-text : linear-gradient(90deg, $color-primary, $color-secondary-light);
+
+$font-display : 'Bangers',
+'Arial Black',
+sans-serif;
+$font-body : 'Outfit',
+'Segoe UI',
+system-ui,
+sans-serif;
+
+$font-size-xs : 0.75rem;
+$font-size-sm : 0.875rem;
+$font-size-base : 1rem;
+$font-size-md : 1.125rem;
+$font-size-lg : 1.25rem;
+$font-size-xl : 1.5rem;
+$font-size-2xl : 1.875rem;
+$font-size-3xl : 2.25rem;
+$font-size-4xl : 3rem;
+$font-size-5xl : 3.75rem;
+$font-size-6xl : 4.5rem;
+$font-size-7xl : 6rem;
+
+$font-weight-light : 300;
+$font-weight-regular : 400;
+$font-weight-semibold: 600;
+$font-weight-bold : 700;
+$font-weight-black : 900;
+
+$line-height-tight : 1.1;
+$line-height-snug : 1.25;
+$line-height-normal : 1.5;
+$line-height-relaxed: 1.65;
+$line-height-loose : 2;
+
+$letter-spacing-tight : -0.02em;
+$letter-spacing-normal : 0;
+$letter-spacing-wide : 0.05em;
+$letter-spacing-wider : 0.1em;
+$letter-spacing-widest : 0.2em;
+
+
+$space-1 : 0.25rem;
+$space-2 : 0.5rem;
+$space-3 : 0.75rem;
+$space-4 : 1rem;
+$space-5 : 1.25rem;
+$space-6 : 1.5rem;
+$space-8 : 2rem;
+$space-10 : 2.5rem;
+$space-12 : 3rem;
+$space-16 : 4rem;
+$space-20 : 5rem;
+$space-24 : 6rem;
+$space-32 : 8rem;
+
+$radius-sm : 4px;
+$radius-md : 8px;
+$radius-lg : 12px;
+$radius-xl : 16px;
+$radius-2xl : 24px;
+$radius-full: 9999px;
+
+$border-width-thin : 1px;
+$border-width-medium: 2px;
+$border-width-thick : 3px;
+
+$shadow-sm : 0 1px 3px rgba(0, 0, 0, 0.4);
+$shadow-md : 0 4px 12px rgba(0, 0, 0, 0.5);
+$shadow-lg : 0 8px 32px rgba(0, 0, 0, 0.6);
+$shadow-xl : 0 16px 48px rgba(0, 0, 0, 0.7);
+$shadow-glow-primary : 0 0 24px rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.35);
+$shadow-glow-secondary: 0 0 24px rgba($color-secondary-r, $color-secondary-g, $color-secondary-b, 0.35);
+$shadow-glow-accent : 0 0 24px rgba($color-accent-r, $color-accent-g, $color-accent-b, 0.35);
+
+$container-max : 1200px;
+$container-padding: $space-6;
+
+$grid-cols : 12;
+$grid-gap : $space-6;
+
+$bp-xs : 375px;
+$bp-sm : 576px;
+$bp-md : 768px;
+$bp-lg : 992px;
+$bp-xl : 1200px;
+$bp-2xl : 1400px;
+
+$transition-fast : 150ms ease;
+$transition-base : 250ms ease;
+$transition-slow : 400ms ease;
+$transition-spring: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+$z-base : 0;
+$z-raised : 10;
+$z-dropdown: 100;
+$z-sticky : 200;
+$z-overlay : 300;
+$z-modal : 400;
+$z-toast : 500;
+$z-tooltip : 600;
+
+$header-height : 72px;
+$header-height-scroll: 60px;

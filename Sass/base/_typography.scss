@@ -1,0 +1,144 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+h1 {
+  font-size: clamp(#{$font-size-4xl}, 6vw, #{$font-size-7xl});
+}
+
+h2 {
+  font-size: clamp(#{$font-size-3xl}, 4vw, #{$font-size-5xl});
+}
+
+h3 {
+  font-size: clamp(#{$font-size-xl}, 3vw, #{$font-size-3xl});
+}
+
+h4 {
+  font-size: clamp(#{$font-size-lg}, 2.5vw, #{$font-size-2xl});
+}
+
+h5 {
+  font-size: $font-size-xl;
+}
+
+h6 {
+  font-size: $font-size-lg;
+}
+
+p {
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  color: $color-text-secondary;
+}
+
+strong,
+b {
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+small {
+  font-size: $font-size-sm;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-light {
+  font-weight: $font-weight-light;
+}
+
+.text-regular {
+  font-weight: $font-weight-regular;
+}
+
+.text-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.text-bold {
+  font-weight: $font-weight-bold;
+}
+
+.text-black {
+  font-weight: $font-weight-black;
+}
+
+.text-xs {
+  font-size: $font-size-xs;
+}
+
+.text-sm {
+  font-size: $font-size-sm;
+}
+
+.text-base {
+  font-size: $font-size-base;
+}
+
+.text-lg {
+  font-size: $font-size-lg;
+}
+
+.text-xl {
+  font-size: $font-size-xl;
+}
+
+.text-2xl {
+  font-size: $font-size-2xl;
+}
+
+.text-primary {
+  color: $color-primary;
+}
+
+.text-secondary {
+  color: $color-secondary;
+}
+
+.text-accent {
+  color: $color-accent;
+}
+
+.text-muted {
+  color: $color-text-muted;
+}
+
+.font-display {
+  font-family: $font-display;
+  letter-spacing: $letter-spacing-wider;
+}
+
+.font-body {
+  font-family: $font-body;
+}
+
+.text-gradient {
+  @include text-gradient($gradient-text);
+}
+
+.text-label {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $letter-spacing-widest;
+  text-transform: uppercase;
+  color: $color-text-muted;
+}
+
+.truncate {
+  @include truncate;
+}

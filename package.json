@@ -1,0 +1,14 @@
+{
+  "name": "hq-universe-landing",
+  "version": "1.0.0",
+  "description": "Landing Page HQ Universe — Desafio +PraTI",
+  "private": true,
+  "scripts": {
+    "sass:watch": "sass --watch Sass/main.scss:CSS/main.css --style=expanded --source-map",
+    "sass:build": "sass Sass/main.scss:CSS/main.css --style=compressed --no-source-map",
+    "sass:dev": "sass Sass/main.scss:CSS/main.css --style=expanded --source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.77.8"
+  }
+}

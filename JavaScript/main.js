@@ -173,3 +173,81 @@ searchInput?.addEventListener('input', () => {
 });
 
 fetchHeroes();
+
+(function headerInit() {
+  const header = document.querySelector('.site-header');
+  const navToggle = document.getElementById('nav-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('main section[id], section[id]');
+
+  if (!header || !navToggle || !mainNav) return;
+
+  const SCROLL_THRESHOLD = 30;
+
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > SCROLL_THRESHOLD);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  //Hamburger
+  function openNav() {
+    header.classList.add('nav-open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.setAttribute('aria-label', 'Fechar menu');
+    document.body.style.overflow = 'hidden';
+    mainNav.style.display = 'block';
+  }
+
+  function closeNav() {
+    header.classList.remove('nav-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Abrir menu');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      if (!header.classList.contains('nav-open')) {
+        mainNav.style.display = '';
+      }
+    }, 400);
+  }
+
+  navToggle.addEventListener('click', () => {
+    header.classList.contains('nav-open') ? closeNav() : openNav();
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (header.classList.contains('nav-open')) closeNav();
+    });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && header.classList.contains('nav-open')) {
+      closeNav();
+      navToggle.focus();
+    }
+  });
+
+  const observerOptions = {
+    root: null,
+    rootMargin: `-${header.offsetHeight + 10}px 0px -55% 0px`,
+    threshold: 0,
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      navLinks.forEach(link => {
+        link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+      });
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
+
+  const yearEl = document.getElementById('footer-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();

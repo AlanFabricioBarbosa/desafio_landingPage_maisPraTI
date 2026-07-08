@@ -1,0 +1,336 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-sticky;
+  height: $header-height;
+  @include transition(all, $transition-slow);
+
+  background: transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba($color-bg-base, 0.55);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-bottom: 1px solid transparent;
+    @include transition(all, $transition-slow);
+    pointer-events: none;
+  }
+
+  &.is-scrolled {
+    height: $header-height-scroll;
+    box-shadow: $shadow-lg;
+
+    &::before {
+      background: rgba($color-bg-base, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: $color-border;
+    }
+
+    .logo-text {
+      font-size: $font-size-lg;
+
+      @include respond-to('md') {
+        font-size: $font-size-xl;
+      }
+    }
+  }
+
+  &.nav-open {
+    &::before {
+      background: rgba($color-bg-base, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom-color: $color-border;
+    }
+  }
+}
+
+.header-inner {
+  @include flex-between;
+  height: 100%;
+  gap: $space-4;
+  position: relative;
+}
+
+.logo {
+  @include flex(row, center, flex-start);
+  gap: $space-2;
+  text-decoration: none;
+  flex-shrink: 0;
+  @include transition(transform, $transition-spring);
+
+  &:hover {
+    transform: scale(1.04);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.logo-text {
+  font-family: $font-display;
+  font-size: $font-size-xl;
+  letter-spacing: $letter-spacing-wider;
+  line-height: 1;
+  color: $color-text-primary;
+  @include transition(font-size, $transition-slow);
+
+  strong {
+    @include text-gradient($gradient-primary);
+    font-weight: $font-weight-black;
+  }
+
+  @include respond-to('md') {
+    font-size: $font-size-2xl;
+  }
+}
+
+.main-nav {
+  display: none;
+  position: fixed;
+  inset: $header-height 0 0 0;
+  background: rgba($color-bg-base, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: $space-8 $space-6;
+  overflow-y: auto;
+  @include transition(opacity $transition-base, transform $transition-slow);
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+
+  .is-scrolled & {
+    inset-top: $header-height-scroll;
+  }
+
+  .nav-open & {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  @include respond-to('lg') {
+    display: flex !important;
+    position: static;
+    inset: auto;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    overflow-y: visible;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+.nav-list {
+  @include flex(column, flex-start, flex-start);
+  gap: $space-2;
+
+  @include respond-to('lg') {
+    @include flex(row, center, center);
+    gap: $space-1;
+  }
+}
+
+.nav-link {
+  display: block;
+  font-family: $font-body;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-secondary;
+  padding: $space-3 $space-4;
+  border-radius: $radius-md;
+  text-decoration: none;
+  letter-spacing: $letter-spacing-wide;
+  @include transition(all, $transition-base);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: $space-4;
+    right: $space-4;
+    height: 2px;
+    background: $gradient-primary;
+    border-radius: $radius-full;
+    transform: scaleX(0);
+    transform-origin: left;
+    @include transition(transform, $transition-base);
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $color-text-primary;
+    background: rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.08);
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &.is-active {
+    color: $color-primary;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  @include respond-to('lg') {
+    font-size: $font-size-sm;
+    padding: $space-2 $space-3;
+    letter-spacing: $letter-spacing-wide;
+  }
+}
+
+.btn-header {
+  display: none;
+  background: $gradient-primary;
+  color: $color-text-inverse;
+  font-size: $font-size-sm;
+  padding: $space-2 $space-5;
+  border-radius: $radius-full;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-wide;
+  white-space: nowrap;
+  box-shadow: $shadow-glow-primary;
+  @include btn-base;
+
+  & {
+    @include transition(all, $transition-base);
+  }
+
+  &:hover {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 0 36px rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.55);
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  @include respond-to('lg') {
+    display: inline-flex;
+  }
+}
+
+.nav-toggle {
+  @include flex-center;
+  width: 44px;
+  height: 44px;
+  border-radius: $radius-md;
+  background: rgba($color-bg-elevated, 0.8);
+  border: 1px solid $color-border;
+  cursor: pointer;
+  flex-shrink: 0;
+  @include transition(all, $transition-base);
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    background: rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.12);
+    border-color: $color-border-strong;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  @include respond-to('lg') {
+    display: none;
+  }
+}
+
+.hamburger {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: $color-text-primary;
+  border-radius: $radius-full;
+  @include transition(all, $transition-base);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $color-text-primary;
+    border-radius: $radius-full;
+    @include transition(all, $transition-base);
+  }
+
+  &::before {
+    top: -6px;
+    width: 14px;
+  }
+
+  &::after {
+    top: 6px;
+  }
+
+  .nav-open & {
+    background: transparent;
+
+    &::before {
+      top: 0;
+      width: 20px;
+      transform: rotate(45deg);
+      background: $color-primary;
+    }
+
+    &::after {
+      top: 0;
+      transform: rotate(-45deg);
+      background: $color-primary;
+    }
+  }
+}
+
+.nav-mobile-cta {
+  margin-top: $space-8;
+  padding-top: $space-6;
+  border-top: 1px solid $color-border;
+
+  .btn {
+    width: 100%;
+    background: $gradient-primary;
+    color: $color-text-inverse;
+    font-weight: $font-weight-bold;
+    border-radius: $radius-full;
+    font-size: $font-size-base;
+    letter-spacing: $letter-spacing-wide;
+    box-shadow: $shadow-glow-primary;
+    @include btn-base;
+  }
+
+  @include respond-to('lg') {
+    display: none;
+  }
+}

@@ -1,0 +1,199 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.about-section {
+  padding-block: $space-24;
+  background: $color-bg-surface;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: $radius-full;
+    background: radial-gradient(circle,
+        rgba($color-secondary-r, $color-secondary-g, $color-secondary-b, 0.1) 0%,
+        transparent 70%);
+    top: -250px;
+    right: -200px;
+    pointer-events: none;
+  }
+
+  @include respond-to('lg') {
+    padding-block: $space-32;
+  }
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-16;
+
+  @include respond-to('lg') {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: $space-20;
+  }
+}
+
+.section-tag {
+  display: inline-block;
+  padding: $space-1 $space-4;
+  background: rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.1);
+  border: 1px solid rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.3);
+  border-radius: $radius-full;
+  color: $color-primary;
+  font-family: $font-body;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $letter-spacing-widest;
+  text-transform: uppercase;
+  margin-bottom: $space-4;
+}
+
+.section-title {
+  font-family: $font-display;
+  font-size: $font-size-3xl;
+  letter-spacing: $letter-spacing-wide;
+  line-height: $line-height-tight;
+  color: $color-text-primary;
+  margin-bottom: $space-6;
+
+  @include respond-to('md') {
+    font-size: $font-size-4xl;
+  }
+}
+
+.section-subtitle {
+  font-family: $font-body;
+  font-size: $font-size-md;
+  font-weight: $font-weight-regular;
+  color: $color-text-secondary;
+  margin-bottom: $space-8;
+  max-width: 60ch;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .about-desc {
+    font-family: $font-body;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+    margin-bottom: $space-4;
+    max-width: 60ch;
+
+    strong {
+      color: $color-primary;
+      font-weight: $font-weight-semibold;
+    }
+
+    &:last-of-type {
+      margin-bottom: $space-8;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-2;
+    padding: $space-3 $space-8;
+    font-family: $font-body;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-wide;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: $radius-full;
+    cursor: pointer;
+    background: $gradient-primary;
+    color: $color-text-inverse;
+    box-shadow: $shadow-glow-primary;
+    @include transition(all, $transition-base);
+
+    &:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 0 36px rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.55);
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-4;
+
+  @include respond-to('sm') {
+    gap: $space-5;
+  }
+}
+
+.feature-card {
+  position: relative;
+  padding: $space-6;
+  border-radius: $radius-xl;
+  border: 1px solid $color-border;
+  background: $color-bg-elevated;
+  overflow: hidden;
+  @include transition(all, $transition-base);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0%;
+    background: $gradient-primary;
+    border-radius: 0 $radius-sm $radius-sm 0;
+    @include transition(height, $transition-slow);
+  }
+
+  &:hover {
+    border-color: rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.35);
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg,
+      0 0 20px rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.08);
+
+    &::before {
+      height: 100%;
+    }
+  }
+}
+
+.feature-title {
+  font-family: $font-display;
+  font-size: $font-size-base;
+  letter-spacing: $letter-spacing-wide;
+  line-height: $line-height-snug;
+  color: $color-text-primary;
+  margin-bottom: $space-2;
+
+  @include respond-to('sm') {
+    font-size: $font-size-lg;
+  }
+}
+
+.feature-card p {
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  color: $color-text-muted;
+  line-height: $line-height-relaxed;
+  max-width: none;
+}

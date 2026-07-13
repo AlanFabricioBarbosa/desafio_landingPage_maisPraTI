@@ -1,0 +1,275 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.hero-section {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding-top: $header-height;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: $z-base;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba($color-bg-base, 0.9) 0%,
+      rgba($color-bg-base, 0.6) 50%,
+      rgba($color-bg-base, 0.1) 100%),
+    linear-gradient(180deg,
+      rgba($color-bg-base, 0.2) 0%,
+      transparent 35%,
+      rgba($color-bg-base, 0.7) 70%,
+      $color-bg-base 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: $z-raised;
+  padding-top: $space-20;
+  padding-bottom: $space-12;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 680px;
+
+  @include respond-to('lg') {
+    padding-top: $space-32;
+    padding-bottom: $space-16;
+  }
+}
+
+.hero-eyebrow {
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  letter-spacing: $letter-spacing-widest;
+  text-transform: uppercase;
+  margin-bottom: $space-4;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: hero-fade-up 0.6s ease forwards 0.1s;
+}
+
+.hero-title {
+  font-family: $font-display;
+  font-size: $font-size-5xl;
+  letter-spacing: $letter-spacing-wide;
+  line-height: $line-height-tight;
+  color: $color-text-primary;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+  margin-bottom: $space-6;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: hero-fade-up 0.7s ease forwards 0.25s;
+
+  @include respond-to('md') {
+    font-size: $font-size-6xl;
+  }
+
+  @include respond-to('xl') {
+    font-size: $font-size-7xl;
+  }
+}
+
+.hero-title-highlight {
+  background: $gradient-primary;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
+
+.hero-desc {
+  font-family: $font-body;
+  font-size: $font-size-md;
+  font-weight: $font-weight-regular;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+  margin-bottom: $space-8;
+  max-width: 52ch;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: hero-fade-up 0.7s ease forwards 0.4s;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: $space-4;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: hero-fade-up 0.7s ease forwards 0.55s;
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-2;
+    padding: $space-4 $space-8;
+    font-family: $font-body;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-wide;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: $radius-full;
+    cursor: pointer;
+    background: $gradient-primary;
+    color: $color-text-inverse;
+    box-shadow: $shadow-glow-primary;
+    @include transition(all, $transition-base);
+
+    &:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 0 36px rgba($color-primary-r, $color-primary-g, $color-primary-b, 0.6);
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-2;
+    padding: $space-4 $space-8;
+    font-family: $font-body;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-wide;
+    text-decoration: none;
+    border: 2px solid $color-border-strong;
+    border-radius: $radius-full;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: $color-text-primary;
+    @include transition(all, $transition-base);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: $color-primary;
+      color: $color-primary;
+      transform: translateY(-3px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+}
+
+.hero-stats {
+  position: relative;
+  z-index: $z-raised;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-top: 1px solid $color-border;
+  background: rgba($color-bg-base, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  @include respond-to('md') {
+    justify-content: flex-start;
+    width: max-content;
+    border: 1px solid $color-border;
+    border-radius: $radius-xl;
+    margin: 0 $container-padding $space-8;
+    background: rgba($color-bg-elevated, 0.75);
+  }
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $space-1;
+  padding: $space-6 $space-8;
+  flex: 1;
+  border-right: 1px solid $color-border;
+  opacity: 0;
+  animation: hero-fade-in 0.6s ease forwards 0.8s;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.stat-number {
+  font-family: $font-display;
+  font-size: $font-size-2xl;
+  letter-spacing: $letter-spacing-normal;
+  line-height: 1;
+  background: $gradient-primary;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  @include respond-to('md') {
+    font-size: $font-size-3xl;
+  }
+}
+
+.stat-label {
+  font-family: $font-body;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wider;
+}
+
+@keyframes hero-fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-fade-in {
+  to {
+    opacity: 1;
+  }
+}

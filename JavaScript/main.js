@@ -93,12 +93,13 @@ function renderHeroes() {
   grid.innerHTML = heroesOnPage.map(hero => {
     const image = hero.images?.md || hero.images?.lg || '';
     const publisher = hero.biography?.publisher || 'Desconhecido';
-    const strength = hero.powerstats?.strength || 0;
-    const intelligence = hero.powerstats?.intelligence || 0;
 
     return `
-      <article role="listitem">
+      <article class="character-card" role="listitem" tabindex="0"
+        aria-label="${hero.name} — ${publisher}">
+
         <img
+          class="character-img"
           src="${image}"
           alt="${hero.name}"
           loading="lazy"
@@ -106,9 +107,18 @@ function renderHeroes() {
           height="320"
           onerror="this.src='https://placehold.co/220x320?text=${encodeURIComponent(hero.name)}'"
         />
-        <h3>${hero.name}</h3>
-        <p>Editora: ${publisher}</p>
-        <p>Força: ${strength} | Inteligência: ${intelligence}</p>
+
+        <span class="character-publisher-badge" aria-hidden="true">
+          ${publisher}
+        </span>
+
+        <span class="character-read-icon" aria-hidden="true">&#9654;</span>
+
+        <div class="character-info">
+          <p class="character-name">${hero.name}</p>
+          <p class="character-publisher">${publisher}</p>
+        </div>
+
       </article>
     `;
   }).join('');

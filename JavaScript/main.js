@@ -261,3 +261,20 @@ fetchHeroes();
   const yearEl = document.getElementById('footer-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();
+
+// btn Back to Top 
+(function backToTopInit() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  const SHOW_THRESHOLD = 300;
+
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('is-visible', window.scrollY > SHOW_THRESHOLD);
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+

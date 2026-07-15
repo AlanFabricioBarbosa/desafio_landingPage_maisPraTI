@@ -15,6 +15,8 @@
     rel="stylesheet" />
 
   <link rel="stylesheet" href="../CSS/main.css" />
+  <link rel="expect" href="#main-content" blocking="render" />
+  <script src="../JavaScript/view-transitions.js" async blocking="render"></script>
 </head>
 
 <body>
@@ -87,28 +89,34 @@
           <form id="contact-form" class="contact-form" novalidate aria-label="Formulário de contato">
             <div class="form-group">
               <label for="contact-name" class="form-label">Nome completo</label>
-              <input type="text" id="contact-name" name="name" class="form-input" placeholder="Seu nome"
-                autocomplete="name" required minlength="2" aria-describedby="name-error" />
+              <div class="form-input-wrapper">
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="Seu nome"
+                  autocomplete="name" required minlength="2" aria-describedby="name-error" />
+              </div>
               <span id="name-error" class="form-error" role="alert" aria-live="polite"></span>
             </div>
 
             <div class="form-group">
               <label for="contact-email" class="form-label">E-mail</label>
-              <input type="email" id="contact-email" name="email" class="form-input" placeholder="seu@email.com"
-                autocomplete="email" required aria-describedby="email-error" />
+              <div class="form-input-wrapper">
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="seu@email.com"
+                  autocomplete="email" required aria-describedby="email-error" />
+              </div>
               <span id="email-error" class="form-error" role="alert" aria-live="polite"></span>
             </div>
 
             <div class="form-group">
               <label for="contact-subject" class="form-label">Assunto</label>
-              <select id="contact-subject" name="subject" class="form-input form-select" required
-                aria-describedby="subject-error">
-                <option value="" disabled selected>Selecione um assunto</option>
-                <option value="duvida">Dúvida sobre assinatura</option>
-                <option value="sugestao">Sugestão de título</option>
-                <option value="parceria">Parceria comercial</option>
-                <option value="outro">Outro</option>
-              </select>
+              <div class="form-input-wrapper">
+                <select id="contact-subject" name="subject" class="form-input form-select" required
+                  aria-describedby="subject-error">
+                  <option value="" disabled selected>Selecione um assunto</option>
+                  <option value="duvida">Dúvida sobre assinatura</option>
+                  <option value="sugestao">Sugestão de título</option>
+                  <option value="parceria">Parceria comercial</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
               <span id="subject-error" class="form-error" role="alert" aria-live="polite"></span>
             </div>
 
